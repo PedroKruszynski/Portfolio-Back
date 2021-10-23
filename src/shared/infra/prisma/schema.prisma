@@ -1,0 +1,10 @@
+//******** AUTO GENERATED FILE, DO NOT EDIT.  *********
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}

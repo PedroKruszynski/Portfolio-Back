@@ -1,0 +1,55 @@
+{
+  "name": "portfolio-back",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "prisma:merge": "npx prisma-merge -b=src/shared/infra/prisma/config.prisma -o=src/shared/infra/prisma/schema.prisma -s=src/shared/infra/prisma/models/*.prisma",
+    "build": "tsc --project tsconfig.json && tscpaths -p tsconfig.json -s ./src -o ./dist",
+    "start": "node dist/shared/infra/http/server.js",
+    "dev:server": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only src/shared/infra/http/server.ts",
+    "test": "jest"
+  },
+  "prisma": {
+    "schema": "src/shared/infra/prisma/schema.prisma"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.3.0",
+    "currency.js": "^2.0.4",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.7.1",
+    "reflect-metadata": "^0.1.13",
+    "tsyringe": "^4.6.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.0.2",
+    "@types/jsonwebtoken": "^8.5.5",
+    "@types/uuid": "^8.3.1",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "jest": "^27.2.4",
+    "prettier": "^2.4.1",
+    "prisma": "^3.3.0",
+    "prisma-merge": "^0.2.0",
+    "ts-jest": "^27.0.5",
+    "ts-node-dev": "^1.1.8",
+    "tsconfig-paths": "^3.11.0",
+    "tscpaths": "^0.0.9",
+    "typescript": "^4.4.3"
+  },
+  "author": "<pedro.nascimento39@etec.sp.gov.br>"
+}
